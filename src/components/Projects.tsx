@@ -9,21 +9,21 @@ const projects = [
     tech: ["Flutter", "Dart", "Docker"],
     image: "/assets/projek/railfun.png",
     category: "Aplikasi",
-    github: "https://github.com/galaxiana04/railfun", // Tambahkan link jika ada
+    github: "https://github.com/galaxiana04/railfun", 
     demo: "#"
   },
   {
     title: "SIPMAS",
-    description: "Sistem Informasi Penelitian dan Pengabdian Masyarakat berbasis Laravel.",
+    description: "Sistem Informasi Penelitian dan Pengabdian Masyarakat berbasis Laravel untuk manajemen data perguruan tinggi.",
     tech: ["Laravel", "PHP", "MySQL"],
     image: "/assets/projek/sipmas.png",
     category: "Web",
-    github: "#",
+    github: "#", // Tambahkan link jika sudah di-upload ke GitHub
     demo: "#"
   },
   {
     title: "AR Edukasi",
-    description: "Pengenalan hewan melalui suara, gambar, dan deskripsi berbasis Augmented Reality.",
+    description: "Pengenalan hewan melalui suara, gambar, dan deskripsi berbasis Augmented Reality (AR).",
     tech: ["C#", "Unity", "Vuforia"],
     image: "/assets/projek/AR-Crow.jpg",
     category: "Aplikasi",
@@ -32,7 +32,7 @@ const projects = [
   },
   {
     title: "UI/UX Linesvpay",
-    description: "Perancangan antarmuka aplikasi pembayaran digital dengan fokus pada kemudahan pengguna.",
+    description: "Perancangan antarmuka aplikasi pembayaran digital V-Pay dengan fokus pada kemudahan transaksi.",
     tech: ["Figma", "UI/UX"],
     image: "/assets/projek/desainlinesvpay.png",
     category: "Desain",
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     title: "KAI Access Redesign",
-    description: "Redesain antarmuka aplikasi KAI Access agar lebih modern dan ramah pengguna.",
+    description: "Redesain antarmuka aplikasi KAI Access agar lebih modern, clean, dan ramah pengguna.",
     tech: ["Figma", "UI/UX"],
     image: "/assets/projek/desainkaiaccess.png",
     category: "Desain",
@@ -50,7 +50,7 @@ const projects = [
   },
   {
     title: "Website Portfolio",
-    description: "Showcase kreatif dengan animasi menakjubkan menggunakan Next.js.",
+    description: "Showcase portfolio pribadi dengan animasi modern menggunakan Next.js dan Tailwind CSS.",
     tech: ["Next.js", "Tailwind", "Framer"],
     image: "/assets/projek/portofolio.png",
     category: "Web",
