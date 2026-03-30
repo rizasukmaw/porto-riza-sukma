@@ -7,7 +7,7 @@ const projects = [
     title: "RAILFUN",
     description: "Aplikasi Multimedia on Demand berbasis ChatBot sebagai hiburan pelanggan kereta api.",
     tech: ["Flutter", "Dart", "Docker"],
-    image: "/assets/projek/railfun.png",
+    image: "/assets/projects/railfun.png",
     category: "Aplikasi",
     github: "https://github.com/galaxiana04/railfun", 
     demo: "#"
@@ -16,7 +16,7 @@ const projects = [
     title: "SIPMAS",
     description: "Sistem Informasi Penelitian dan Pengabdian Masyarakat berbasis Laravel untuk manajemen data perguruan tinggi.",
     tech: ["Laravel", "PHP", "MySQL"],
-    image: "/assets/projek/sipmas.png",
+    image: "/assets/projects/sipmas.png",
     category: "Web",
     github: "#", // Tambahkan link jika sudah di-upload ke GitHub
     demo: "#"
@@ -25,7 +25,7 @@ const projects = [
     title: "AR Edukasi",
     description: "Pengenalan hewan melalui suara, gambar, dan deskripsi berbasis Augmented Reality (AR).",
     tech: ["C#", "Unity", "Vuforia"],
-    image: "/assets/projek/AR-Crow.jpg",
+    image: "/assets/projects/AR-Crow.jpg",
     category: "Aplikasi",
     github: "#",
     demo: "#"
@@ -34,7 +34,7 @@ const projects = [
     title: "UI/UX Linesvpay",
     description: "Perancangan antarmuka aplikasi pembayaran digital V-Pay dengan fokus pada kemudahan transaksi.",
     tech: ["Figma", "UI/UX"],
-    image: "/assets/projek/desainlinesvpay.png",
+    image: "/assets/projects/desainlinesvpay.png",
     category: "Desain",
     github: "#",
     demo: "#"
@@ -43,7 +43,7 @@ const projects = [
     title: "KAI Access Redesign",
     description: "Redesain antarmuka aplikasi KAI Access agar lebih modern, clean, dan ramah pengguna.",
     tech: ["Figma", "UI/UX"],
-    image: "/assets/projek/desainkaiaccess.png",
+    image: "/assets/projects/desainkaiaccess.png",
     category: "Desain",
     github: "#",
     demo: "#"
@@ -52,7 +52,7 @@ const projects = [
     title: "Website Portfolio",
     description: "Showcase portfolio pribadi dengan animasi modern menggunakan Next.js dan Tailwind CSS.",
     tech: ["Next.js", "Tailwind", "Framer"],
-    image: "/assets/projek/portofolio.png",
+    image: "/assets/projects/portofolio.png",
     category: "Web",
     github: "#",
     demo: "#"
