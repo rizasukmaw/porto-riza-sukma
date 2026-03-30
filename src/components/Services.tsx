@@ -1,71 +1,90 @@
-import { Smartphone, Layout, BarChart3, Palette } from "lucide-react";
+import { Smartphone, Layout, BarChart3, Palette, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
     icon: Smartphone,
-    title: "Pengembangan Aplikasi Mobile",
+    title: "Mobile App Development",
     description:
-      "Membangun aplikasi mobile multiplatform dengan performa tinggi menggunakan Flutter dan Dart, berfokus pada kecepatan, efisiensi, dan pengalaman pengguna yang mulus.",
+      "Membangun aplikasi multiplatform (Android/iOS) menggunakan Flutter & Dart dengan fokus pada performa native dan pengalaman pengguna yang mulus.",
+    color: "from-blue-500/20 to-cyan-500/20",
+    iconColor: "text-sky-500",
   },
   {
     icon: Layout,
     title: "Frontend Development",
     description:
-      "Menciptakan antarmuka web yang modern, responsif, dan interaktif menggunakan React atau Next.js dengan pendekatan desain berorientasi pengguna.",
+      "Menciptakan antarmuka web modern, responsif, dan interaktif menggunakan React atau Next.js yang dioptimalkan untuk kecepatan dan SEO.",
+    color: "from-purple-500/20 to-blue-500/20",
+    iconColor: "text-purple-500",
   },
   {
     icon: BarChart3,
-    title: "Analisis Data",
+    title: "Data Analysis",
     description:
-      "Mengolah dan menganalisis data untuk menghasilkan insight yang membantu pengambilan keputusan, serta mendukung pengembangan fitur aplikasi berbasis data.",
+      "Mengolah dataset kompleks menjadi insight bisnis yang actionable menggunakan Python, Pandas, dan teknik visualisasi data yang informatif.",
+    color: "from-emerald-500/20 to-teal-500/20",
+    iconColor: "text-emerald-500",
   },
   {
     icon: Palette,
-    title: "Desain UI/UX",
+    title: "UI/UX Design",
     description:
-      "Merancang tampilan dan pengalaman pengguna yang menarik, intuitif, dan konsisten agar setiap interaksi terasa natural dan menyenangkan.",
+      "Merancang alur pengguna yang intuitif dan antarmuka visual yang estetik menggunakan Figma, memastikan produk digital mudah digunakan.",
+    color: "from-pink-500/20 to-rose-500/20",
+    iconColor: "text-rose-500",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-background relative overflow-hidden">
+      {/* Dekorasi Latar Belakang */}
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-sky-500/5 rounded-full blur-[100px] -z-10" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Judul Section */}
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center"
-            data-aos="fade-up"
-          >
-            Layanan
-          </h2>
-
-          <p
-            className="text-muted-foreground text-center mb-12 sm:mb-16 max-w-2xl mx-auto text-sm sm:text-base px-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Keahlian saya dalam menciptakan solusi digital yang fungsional dan berorientasi pada pengalaman pengguna.
-          </p>
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+              Layanan <span className="text-sky-500">Keahlian</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              Membantu Anda mewujudkan ide digital melalui pendekatan teknis yang terukur dan desain yang berpusat pada manusia.
+            </p>
+            <div className="w-16 h-1 bg-sky-500 mx-auto mt-6 rounded-full" />
+          </div>
 
           {/* Kartu Layanan */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-card rounded-xl p-6 shadow-card hover:shadow-hover transition-smooth border border-border hover:border-primary/50"
+                className="group relative bg-card rounded-2xl p-8 border border-border/60 hover:border-sky-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-smooth">
-                  <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-smooth" />
+                {/* Glow Effect on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
+
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon Container */}
+                  <div className={`w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <service.icon className={`h-7 w-7 ${service.iconColor} group-hover:text-primary transition-colors`} />
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
+                    {service.description}
+                  </p>
+
+                  {/* Decorative Arrow */}
+                  <div className="flex justify-end mt-auto">
+                    <ArrowUpRight className="text-muted-foreground/30 group-hover:text-sky-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" size={24} />
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-muted-foreground">
-                  {service.description}
-                </p>
               </div>
             ))}
           </div>
