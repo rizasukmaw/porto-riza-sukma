@@ -54,7 +54,7 @@ const projects = [
     tech: ["Next.js", "Tailwind", "Framer"],
     image: "/assets/projects/portofolio.png",
     category: "Web",
-    github: "#",
+    github: "https://github.com/galaxiana04/porto-riza-sukma.git",
     demo: "#"
   }
 ];

@@ -142,7 +142,7 @@ const Contact = () => {
                   { icon: <Github size={20} />, label: "GitHub", href: "https://github.com/galaxiana04" },
                   { icon: <Linkedin size={20} />, label: "LinkedIn", href: "http://www.linkedin.com/in/riza-sukmawardani-532685288" },
                   { icon: <Instagram size={20} />, label: "Instagram", href: "https://www.instagram.com/rzaskma_29/" },
-                  { icon: <MessageSquare size={20} />, label: "WhatsApp", href: "https://wa.me/628123456789" }, // Contoh
+                  { icon: <MessageSquare size={20} />, label: "WhatsApp", href: "https://wa.me/6283193979582" }, // Contoh
                 ].map((social, idx) => (
                   <a
                     key={idx}
@@ -173,7 +173,7 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Riza Sukma"
+                        placeholder="Ananda"
                         className={`bg-muted/30 border-none focus-visible:ring-2 focus-visible:ring-sky-500 h-12 ${errors.name ? "ring-2 ring-destructive" : ""}`}
                       />
                       {errors.name && <p className="text-xs text-destructive font-medium">{errors.name}</p>}
@@ -186,7 +186,7 @@ const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="riza@example.com"
+                        placeholder="anandaa@gmail.com"
                         className={`bg-muted/30 border-none focus-visible:ring-2 focus-visible:ring-sky-500 h-12 ${errors.email ? "ring-2 ring-destructive" : ""}`}
                       />
                       {errors.email && <p className="text-xs text-destructive font-medium">{errors.email}</p>}
