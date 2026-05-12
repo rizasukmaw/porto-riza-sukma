@@ -56,7 +56,7 @@ const Navigation = () => {
               R
             </div>
             <span className="hidden sm:block text-xl font-bold tracking-tighter">
-              Riza<span className="text-primary text-2xl">.</span>
+              Rizasukma<span className="text-primary text-2xl"></span>
             </span>
           </button>
 

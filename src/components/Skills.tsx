@@ -60,20 +60,22 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 bg-[#020617] relative overflow-hidden"
+      // PERUBAHAN: bg-[#020617] diganti bg-background
+      className="py-24 bg-background relative overflow-hidden transition-colors duration-300"
     >
-      {/* Background Glows */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px] -z-10" />
+      {/* Background Glows - Disesuaikan dengan warna primary */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[120px] -z-10" />
       <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[120px] -z-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-20" data-aos="fade-up">
-            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
-              Technical <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Expertise</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter text-foreground">
+              Technical <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">Expertise</span>
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            {/* PERUBAHAN: text-slate-400 menjadi text-muted-foreground */}
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Kombinasi teknologi modern untuk membangun ekosistem digital yang responsif, stabil, dan berbasis data.
             </p>
           </div>
@@ -83,10 +85,12 @@ const Skills = () => {
             {Object.values(skillsData).map((section, sIdx) => (
               <div key={sIdx} className="space-y-10">
                 <div className="flex items-center gap-4" data-aos="fade-right">
-                  <h3 className={`text-2xl font-bold text-white whitespace-nowrap`}>
+                  {/* PERUBAHAN: text-white menjadi text-foreground */}
+                  <h3 className={`text-2xl font-bold text-foreground whitespace-nowrap`}>
                     {section.title}
                   </h3>
-                  <div className="h-[1px] w-full bg-slate-800" />
+                  {/* PERUBAHAN: bg-slate-800 menjadi bg-border */}
+                  <div className="h-[1px] w-full bg-border" />
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-center">
@@ -104,7 +108,7 @@ const Skills = () => {
 };
 
 /* Reusable SkillCard with Framer-like hover logic via Tailwind */
-const SkillCard = ({ skill, index }) => (
+const SkillCard = ({ skill, index }: { skill: any; index: number }) => (
   <div
     className="group relative"
     data-aos="zoom-in"
@@ -113,22 +117,24 @@ const SkillCard = ({ skill, index }) => (
     {/* Animated Background Glow */}
     <div className={`absolute -inset-0.5 bg-gradient-to-r ${skill.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500 group-hover:duration-200`} />
     
-    <div className="relative flex flex-col items-center p-6 bg-slate-900/50 border border-slate-800 rounded-2xl backdrop-blur-xl hover:border-slate-700 transition-all duration-300 group-hover:-translate-y-2">
+    {/* PERUBAHAN: Menggunakan bg-card, border-border, dan shadow-card */}
+    <div className="relative flex flex-col items-center p-6 bg-card border border-border rounded-2xl backdrop-blur-xl hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-2 shadow-sm hover:shadow-hover">
       <div
-        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${skill.color} flex items-center justify-center shadow-2xl mb-4 group-hover:rotate-6 transition-transform duration-500`}
+        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${skill.color} flex items-center justify-center shadow-lg mb-4 group-hover:rotate-6 transition-transform duration-500`}
       >
         <skill.Icon className="w-8 h-8 text-white" />
       </div>
       
-      <span className="text-slate-200 font-bold text-sm sm:text-base text-center">
+      {/* PERUBAHAN: text-slate-200 menjadi text-foreground */}
+      <span className="text-foreground font-bold text-sm sm:text-base text-center group-hover:text-primary transition-colors">
         {skill.name}
       </span>
       
       {/* Decorative Progress Dot */}
       <div className="mt-4 flex gap-1">
-        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
-        <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-        <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+        <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30" />
+        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30" />
       </div>
     </div>
   </div>

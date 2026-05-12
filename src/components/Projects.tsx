@@ -17,7 +17,7 @@ const projects = [
     tech: ["Laravel", "PHP", "MySQL"],
     image: "/assets/projects/sipmas.png",
     category: "Web",
-    github: "#", // Tambahkan link jika sudah di-upload ke GitHub
+    github: "#", 
     demo: "#"
   },
   {
@@ -49,13 +49,12 @@ const projects = [
     image: "/assets/projects/portofolio.png",
     category: "Web",
     github: "https://github.com/galaxiana04/porto-riza-sukma.git",
-
   }
 ];
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("Semua");
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Filter kategori unik dari data proyek yang ada
   const categories = ["Semua", "Web", "Aplikasi", "Desain"];
@@ -65,18 +64,18 @@ const Projects = () => {
     : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-24 bg-[#020617] text-white">
+    <section id="portfolio" className="py-24 bg-background text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               Featured Projects
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg italic">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg italic">
               "Turning complex problems into elegant digital solutions."
             </p>
-            <div className="w-20 h-1 bg-sky-500 mx-auto mt-6 rounded-full" />
+            <div className="w-20 h-1 bg-primary mx-auto mt-6 rounded-full" />
           </div>
 
           {/* Filter Bar */}
@@ -91,8 +90,8 @@ const Projects = () => {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${
                   activeFilter === cat 
-                  ? "bg-sky-500 border-sky-500 text-white shadow-[0_0_15px_rgba(14,165,233,0.4)]" 
-                  : "border-slate-800 text-slate-400 hover:border-sky-500/50 hover:text-sky-400"
+                  ? "bg-primary border-primary text-primary-foreground shadow-lg shadow-primary/30" 
+                  : "bg-card border-border text-muted-foreground hover:border-primary/50 hover:text-primary"
                 }`}
               >
                 {cat}
@@ -105,37 +104,41 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="group relative bg-slate-900/50 rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-500"
+                className="group relative bg-card rounded-3xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-card transition-all duration-500"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
                 {/* Thumbnail Container */}
-                <div className="aspect-video relative overflow-hidden">
+                <div className="aspect-video relative overflow-hidden bg-muted">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Overlay on Hover */}
-                  <div className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                  {/* Overlay on Hover - Tetap menggunakan gelap agar tombol putih terlihat kontras */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 backdrop-blur-[2px]">
                     <button 
                       onClick={() => setSelectedImage(project.image)}
-                      className="p-3 bg-white/10 hover:bg-sky-500 rounded-full transition-colors backdrop-blur-md"
+                      className="p-3 bg-white/20 hover:bg-primary text-white rounded-full transition-colors backdrop-blur-md"
                     >
                       <ZoomIn className="w-6 h-6 text-white" />
                     </button>
                     <div className="flex gap-3">
-                      <a href={project.github} className="p-2 bg-slate-800 hover:bg-sky-600 rounded-lg transition-colors">
-                        <Github size={20} />
-                      </a>
-                      <a href={project.demo} className="p-2 bg-sky-600 hover:bg-sky-500 rounded-lg transition-colors text-white font-bold text-xs flex items-center gap-1">
-                        <ExternalLink size={16} /> Live
-                      </a>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noreferrer" className="p-2 bg-white/20 hover:bg-primary text-white rounded-lg transition-colors backdrop-blur-md">
+                          <Github size={20} />
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a href={project.demo} target="_blank" rel="noreferrer" className="p-2 bg-primary hover:bg-primary/80 text-primary-foreground rounded-lg transition-colors font-bold text-xs flex items-center gap-1 shadow-md">
+                          <ExternalLink size={16} /> Live
+                        </a>
+                      )}
                     </div>
                   </div>
                   {/* Category Tag */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-sky-500/20 backdrop-blur-md border border-sky-500/30 text-sky-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">
+                    <span className="px-3 py-1 bg-background/80 backdrop-blur-md border border-border text-primary text-[10px] font-bold uppercase tracking-widest rounded-lg">
                       {project.category}
                     </span>
                   </div>
@@ -143,17 +146,17 @@ const Projects = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-sky-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-slate-400 text-sm line-clamp-2 mb-6">
+                  <p className="text-muted-foreground text-sm line-clamp-2 mb-6">
                     {project.description}
                   </p>
                   
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((t, i) => (
-                      <span key={i} className="flex items-center gap-1 text-[10px] font-mono text-slate-500 bg-slate-800/50 px-2 py-1 rounded">
+                      <span key={i} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground bg-muted/50 border border-border/50 px-2 py-1 rounded">
                         <Code2 size={10} /> {t}
                       </span>
                     ))}
@@ -168,16 +171,16 @@ const Projects = () => {
       {/* Lightbox / Image Preview */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300"
           onClick={() => setSelectedImage(null)}
         >
-          <button className="absolute top-6 right-6 text-white/50 hover:text-white">
+          <button className="absolute top-6 right-6 text-muted-foreground hover:text-foreground transition-colors bg-card/50 p-2 rounded-full">
             <X size={32} />
           </button>
           <img
             src={selectedImage}
             alt="Preview"
-            className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl animate-in zoom-in duration-300"
+            className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl animate-in zoom-in duration-300 border border-border"
           />
         </div>
       )}
