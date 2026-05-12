@@ -10,7 +10,6 @@ const projects = [
     image: "/assets/projects/railfun.png",
     category: "Aplikasi",
     github: "https://github.com/galaxiana04/railfun", 
-    demo: "#"
   },
   {
     title: "SIPMAS",
@@ -27,8 +26,6 @@ const projects = [
     tech: ["C#", "Unity", "Vuforia"],
     image: "/assets/projects/AR-Crow.jpg",
     category: "Aplikasi",
-    github: "#",
-    demo: "#"
   },
   {
     title: "UI/UX Linesvpay",
@@ -36,8 +33,6 @@ const projects = [
     tech: ["Figma", "UI/UX"],
     image: "/assets/projects/desainlinesvpay.png",
     category: "Desain",
-    github: "#",
-    demo: "#"
   },
   {
     title: "KAI Access Redesign",
@@ -45,8 +40,7 @@ const projects = [
     tech: ["Figma", "UI/UX"],
     image: "/assets/projects/desainkaiaccess.png",
     category: "Desain",
-    github: "#",
-    demo: "#"
+    github: "https://www.figma.com/design/hZ98v2TBg9eYPIDj9mH30n/Project_MenambahkanDesain?node-id=0-1&p=f&t=mNPEkL5hUF4JhzAJ-0",
   },
   {
     title: "Website Portfolio",
@@ -55,7 +49,7 @@ const projects = [
     image: "/assets/projects/portofolio.png",
     category: "Web",
     github: "https://github.com/galaxiana04/porto-riza-sukma.git",
-    demo: "#"
+
   }
 ];
 
