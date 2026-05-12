@@ -34,7 +34,7 @@ const certificatesData = {
       title: "Database Design",
       issuer: "Oracle Academy",
       date: "2024",
-      image: "/assets/Pelatihan/DatabaseDesign.jpg",
+      image: "/assets/Pelatihan/Database Design.jpg",
     },
     {
       title: "Sharing Technology",
